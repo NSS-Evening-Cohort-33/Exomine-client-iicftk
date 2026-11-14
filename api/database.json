@@ -1,4 +1,15 @@
 {
-    "minerals":[],
-    "facilityMinerals": []
+  "governors": [
+    { "id": 1, "name": "Patricia Purdy", "colonyId": 1, "status": "active" },
+    { "id": 2, "name": "Lola Wolff", "colonyId": 2, "status": "active" },
+    { "id": 3, "name": "Katrina Bahringer", "colonyId": 3, "status": "inactive" },
+    { "id": 4, "name": "Damon Hartmann", "colonyId": 1, "status": "active" }
+  ],
+  "colonies": [
+    { "id": 1, "name": "Earth" },
+    { "id": 2, "name": "Mars" },
+    { "id": 3, "name": "Europa" }
+  ],
+  "minerals": [],
+  "facilityMinerals": []
 }
