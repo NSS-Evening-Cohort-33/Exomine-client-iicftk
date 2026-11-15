@@ -1,4 +1,77 @@
-{
-    "minerals":[],
-    "facilityMinerals": []
+{ 
+    "governors":[
+        {
+            "id": 1,
+            "name": "Patricia Purdy",
+            "status": "active"
+        },
+        {
+            "id": 2,
+            "name": "Lola Wolff",
+            "status": "active"
+        },
+        {
+            "id": 3,
+            "name": "Katrina Bahringer",
+            "status": "active"
+        },
+        {
+            "id": 4,
+            "name": "Damon Hartmann",
+            "status": "active"
+        }
+    ],
+    "colonies": [
+        {
+            "id": 1,
+            "name": "Earth"
+        },
+        {
+            "id": 2,
+            "name": "Mars"
+        },
+        {
+            "id": 3,
+            "name": "Europa"
+        }
+    ],
+    "facilities": [
+        {
+            "id": 1,
+            "name": "Ganymede",
+            "status": "active"
+        },
+        {
+            "id": 2,
+            "name": "lo",
+            "status": "active"
+        },
+        {
+            "id": 3,
+            "name": "Titan",
+            "status": "active"
+        }
+    ],
+    "minerals":[
+       {
+            "id": 1,
+            "name": "Iron"
+        },
+        {
+            "id": 2,
+            "name": "Chromium"
+        },
+        {
+            "id": 3,
+            "name": "Molybdenum"
+        },
+        {
+            "id": 4,
+            "name": "Salt"
+        }
+    ],
+    "facilityMinerals": [
+    ],
+    "colonyMinerals": [
+    ]
 }
