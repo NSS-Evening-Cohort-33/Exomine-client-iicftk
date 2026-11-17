@@ -10,6 +10,16 @@
     { "id": 2, "name": "Mars" },
     { "id": 3, "name": "Europa" }
   ],
-  "minerals": [],
-  "facilityMinerals": []
+   "minerals": [
+    { "id": 1, "name": "Iron" },
+    { "id": 2, "name": "Chromium" },
+    { "id": 3, "name": "Molybdenum" },
+    { "id": 4, "name": "Salt" }
+  ],
+  "facilityMinerals": [],
+  "colonyMinerals": [
+    { "id": 1, "colonyId": 1, "mineralId": 1, "quantity": 40 },
+    { "id": 2, "colonyId": 1, "mineralId": 4, "quantity": 15 },
+    { "id": 3, "colonyId": 2, "mineralId": 2, "quantity": 7 }
+  ]
 }
