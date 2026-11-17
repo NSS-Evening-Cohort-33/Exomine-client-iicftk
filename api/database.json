@@ -3,22 +3,26 @@
         {
             "id": 1,
             "name": "Patricia Purdy",
-            "status": "active"
+            "status": "active",
+            "colonyId": 1
         },
         {
             "id": 2,
             "name": "Lola Wolff",
-            "status": "active"
+            "status": "active",
+            "colonyId": 3
         },
         {
             "id": 3,
             "name": "Katrina Bahringer",
-            "status": "active"
+            "status": "active",
+            "colonyId": 2
         },
         {
             "id": 4,
             "name": "Damon Hartmann",
-            "status": "active"
+            "status": "active",
+            "colonyId": 3
         }
     ],
     "colonies": [
@@ -71,6 +75,48 @@
         }
     ],
     "facilityMinerals": [
+        {
+            "id": 1,
+            "facilityId": 1,
+            "mineralId": 1,
+            "quantity": 10
+        },
+        {
+            "id": 2,
+            "facilityId": 1,
+            "mineralId": 2,
+            "quantity": 7
+        },
+        {
+            "id": 3,
+            "facilityId": 2,
+            "mineralId": 4,
+            "quantity": 20
+        },
+        {
+            "id": 4,
+            "facilityId": 2,
+            "mineralId": 1,
+            "quantity": 90
+        },
+        {
+            "id": 5,
+            "facilityId": 3,
+            "mineralId": 2,
+            "quantity": 37
+        },
+        {
+            "id": 6,
+            "facilityId": 3,
+            "mineralId": 4,
+            "quantity": 16
+        },
+        {
+            "id": 7,
+            "facilityId": 1,
+            "mineralId": 3,
+            "quantity": 10
+        }
     ],
     "colonyMinerals": [
     ]
