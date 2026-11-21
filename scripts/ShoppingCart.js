@@ -1,22 +1,35 @@
-import { getState  } from "./.TransientState.js"
+import { getState, purchaseMineral } from "./TransientState.js"
 
-const export ShoppingCart = async () => {
+//Get the current state (what the user picked) 
+export const ShoppingCart = async () => {
     const state = getState()
-    const response = await fetch("http://localhost:8088/")
-    const shoppingCart = await response.json()
 
+    // Nothing picked yet: show an empty cart
+     if (state.mineralId === 0) {
+    return `<p>Your cart is empty</p>`
+    }
+//fetching selected facility's record; get name 
+    const facilityResponse = await fetch(`http://localhost:8088/facilities/${state.selectedFacility}`)
+    const facility = await facilityResponse.json()
+
+//fetching selected mineral's record; get name 
+    const mineralResponse = await  fetch(`http://localhost:8088/minerals/${state.mineralId}`)
+    const mineral = await mineralResponse.json()
+
+//building html and button
+    let html = `
+            <p>1 ton of ${mineral.name} from ${facility.name}</p>
+            <button id="purchase">Purchase Mineral</button>`
+//return the html so main.js can put on it on the page 
+return html 
 }
 
-//Get the selected governor and find their colonyId.
 
-//Find the facility’s record for the selected mineral (in facilityMinerals).
+//set up click event for when Puchase Button clicked
+const handlePurchaseButtonClick = (clickEvent) => {
+    if (clickEvent.target.id === "purchase") {
+        purchaseMineral()
+    }
+}
 
-//Subtract 1 from that facility record’s quantity and save it (PUT).
-
-//Look in colonyMinerals for a record that matches this colony and this mineral.
-
-//If one exists: add 1 to its quantity and save it (PUT).
-
-//If none exists: create a new record with colonyId, mineralId, and quantity: 1 (POST).
-
-//Tell the page to re-render (that’s the stateChanged event already at the bottom of your function).
+document.addEventListener("click", handlePurchaseButtonClick)
