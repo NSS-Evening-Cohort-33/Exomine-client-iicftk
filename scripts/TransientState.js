@@ -83,7 +83,7 @@ export const purchaseMineral = async() => {
       };
       const response = await fetch("http://localhost:8088/colonyMinerals",colonyPostOptions);
     }
-    resetState()
+    // resetState()
 
   } else {
     window.alert("you must select all options...");
