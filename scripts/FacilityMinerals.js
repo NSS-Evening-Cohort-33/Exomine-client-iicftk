@@ -11,7 +11,7 @@ document.addEventListener("change", handleMineralChoice)
 
 export const FacilityMinerals = async() => {
     const transientState = getState()
-    const FacilityMineralsResponse = await fetch("http://localhost:8088/facilityMinerals?expand=facility&expand=mineral")
+    const FacilityMineralsResponse = await fetch("http://localhost:8088/facilityMinerals?_expand=facility&_expand=mineral")
     const facilityMineralsArray = await FacilityMineralsResponse.json()
 
     let html = "<h2>Facility Minerals</h2>"

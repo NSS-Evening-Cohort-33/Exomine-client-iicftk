@@ -8,7 +8,7 @@ export const Governors = async () => {
                 <option value="0">Choose a governor...</option>`;
 
   for (const governor of governors) {
-    const isSelected = governor.id === state.selectedGovernor ? "selected" : "";
+    const isSelected = governor.id === state.governorId ? "selected" : "";
     html += `<option value="${governor.id}" ${isSelected}>${governor.name}</option>`;
   }
 
