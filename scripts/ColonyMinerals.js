@@ -3,12 +3,12 @@ import { getState } from "./TransientState.js";
 export const ColonyMinerals = async () => {
   const state = getState();
 
-  if (state.selectedGovernor === 0) {
+  if (state.governorId === 0) {
     return `<h2>Colony Minerals</h2>`;
   }
 
   const govResponse = await fetch(
-    `http://localhost:8088/governors/${state.selectedGovernor}?_expand=colony`,
+    `http://localhost:8088/governors/${state.governorId}?_expand=colony`,
   );
   const governor = await govResponse.json();
 
