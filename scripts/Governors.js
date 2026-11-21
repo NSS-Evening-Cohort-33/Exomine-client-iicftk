@@ -17,7 +17,7 @@ export const Governors = async () => {
   return html;
 };
 const handleGovernorChange = (changeEvent) => {
-  debugger;
+  
   if (changeEvent.target.id === "governor") {
     const governorId = parseInt(changeEvent.target.value);
     setGovernor(governorId);
