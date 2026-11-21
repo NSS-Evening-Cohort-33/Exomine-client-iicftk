@@ -9,7 +9,7 @@ export const ShoppingCart = async () => {
     return `<p>Your cart is empty</p>`
     }
 //fetching selected facility's record; get name 
-    const facilityResponse = await fetch(`http://localhost:8088/facilities/${state.selectedFacility}`)
+    const facilityResponse = await fetch(`http://localhost:8088/facilities/${state.facilityId}`)
     const facility = await facilityResponse.json()
 
 //fetching selected mineral's record; get name 
