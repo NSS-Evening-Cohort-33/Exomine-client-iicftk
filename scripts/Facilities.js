@@ -21,7 +21,7 @@ export const Facilities = async () => {
     <option value="0">Choose a facility...</option>`
 
     for (const facility of facilities) {
-        const isSelected = facility.id === state.selectedFacility ? "selected" : ""
+        const isSelected = facility.id === state.facilityId ? "selected" : ""
 
         html += `<option value="${facility.id}" ${isSelected}>${facility.name}</option>`
     }
