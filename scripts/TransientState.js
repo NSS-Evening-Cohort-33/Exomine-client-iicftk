@@ -45,8 +45,9 @@ export const purchaseMineral = async() => {
     const colonyId = governorMatch.colonyId
 
     const facilityMineralsMatch = facilityMinerals.find((facilityMineral) => state.facilityId === facilityMineral.facilityId && facilityMineral.mineralId === state.mineralId )
-
-    facilityMineralsMatch.quantity--
+    if (facilityMineralsMatch.quantity > 0){
+      facilityMineralsMatch.quantity--
+    }
     const facilityPutOptions = {
       method: "PUT",
       headers: {
@@ -58,7 +59,10 @@ export const purchaseMineral = async() => {
     
     const colonyMineralsMatch = colonyMinerals.find((item) => colonyId === item.colonyId && state.mineralId === item.mineralId);
     if (colonyMineralsMatch !== undefined) {
-      colonyMineralsMatch.quantity++
+      if (facilityMineralsMatch.quantity > 0) {
+        colonyMineralsMatch.quantity++
+      }
+      
       const colonyPutOptions = {
         method: "PUT",
         headers: {
@@ -83,7 +87,6 @@ export const purchaseMineral = async() => {
       };
       const response = await fetch("http://localhost:8088/colonyMinerals",colonyPostOptions);
     }
-    // resetState()
 
   } else {
     window.alert("you must select all options...");

@@ -19,9 +19,13 @@ export const FacilityMinerals = async() => {
         const facilitySelected = facilityMineralsArray.find((facilityMineral) => transientState.facilityId === facilityMineral.facilityId)
         html = `<h2>${facilitySelected.facility.name}</h2>`
         for (const item of facilityMineralsArray) {
-            if (transientState.facilityId === item.facilityId ){
-                const isChecked = transientState.mineralId === item.mineralId ? "checked" : ""
-                html += `<input type="radio" name="minerals" value="${item.mineralId}" id="${item.facility.name}-${item.mineral.name}-${item.quantity}" ${isChecked}><label for="${item.facility.name}-${item.mineral.name}-${item.quantity}">${item.quantity} tons of ${item.mineral.name}</label>`
+            if (transientState.facilityId === item.facilityId){
+                if (item.quantity > 0){
+                    const isChecked = transientState.mineralId === item.mineralId ? "checked" : ""
+                    html += `<input type="radio" name="minerals" value="${item.mineralId}" id="${item.facility.name}-${item.mineral.name}-${item.quantity}" ${isChecked}><label for="${item.facility.name}-${item.mineral.name}-${item.quantity}">${item.quantity} tons of ${item.mineral.name}</label>`
+                } else {
+                    html += `<p id="${item.facility.name}-${item.mineral.name}-${item.quantity}">${item.quantity} tons of ${item.mineral.name}</p>`
+                }
             }
         }
     }
